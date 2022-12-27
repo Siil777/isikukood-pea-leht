@@ -1,34 +1,34 @@
-from datetime import *
-from module1 import *
+from datetime import*
+from module1 import*
 while True:
-    ik=input("personal indetefication code: ")
-    if len(ik)==11:
+    q=input('code:')
+    if len(q)==11:
         try:
-            ik_list=list(ik) #ik_list["4","9","9"...,...]
-            if int(ik_list[0]) in [1,2,3,4,5,6]:
-                if int(ik_list[0]) in [1,2]:
-                    a=1800
-                elif int(ik_list[0]) in [3,4]:
-                    a=1900
+            q_list=list(q)
+            if int(q_list[0]) in [1,2,3,4,5,6]:
+                if int(q_list[0]) in [1,2]:
+                    y=1800
+                elif int(q_list[0]) in [3,4]:
+                    y=1900
                 else:
-                    a=2000
-                aasta=a+int(ik_list[1]+ik_list[2])
-                kuu=int(ik_list[3]+ik_list[4])
-                paev=int(ik_list[5]+ik_list[6])
-                if datetime(aasta,kuu,paev):
-                    vastus=Kontroll(ik)   #                 
-                    if type(vastus)==int:
-                        ik3=int(ik[7:10])
-                        haigla=Haigla(ik3)
-                        print(haigla)
-                        sugu=Sugu(int(ik_list[0]))
-                        print(sugu)
-                    else:
-                        print(vastus) #
+                    y=2000
 
+                year=y+int(q_list[1]+q_list[2])
+                month=int(q_list[3]+q_list[4])
+                day=int(q_list[5]+q_list[6])
+                if datetime(year,month,day):
+                    answer=control(q)
+                    if type(answer)==int:
+                        n3=int(q[7:10])
+                        hospital=Hospital(n3)
+                        print(hospital)
+                        persons_gender=persons_gender(int(q_list[0]))
+                        print(persons_gender)
+                    else:
+                        print(answer)
             else:
-                print("the first symbol incorrect ")
+                print('the first symbol incorrect')
         except:
-            print("data type illegal, require numerals")
+            print("")
     else:
-        print("total of symbols has to be 11 ")
+        print('it requires no more 11 symbols')
