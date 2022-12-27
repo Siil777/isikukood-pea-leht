@@ -16,6 +16,7 @@ while True:
                 year=y+int(q_list[1]+q_list[2])
                 month=int(q_list[3]+q_list[4])
                 day=int(q_list[5]+q_list[6])
+                print('birthday',q,'is',day,'/',month,'/',year)
                 if datetime(year,month,day):
                     answer=control(q)
                     if type(answer)==int:
